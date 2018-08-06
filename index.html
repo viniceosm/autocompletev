@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Autocompletev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="autocompletev.css">
+    <script src="jquery.min.js"></script>
+    <script src="autocompletev.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<input id="pesquisaUsuario" class="form-control datalist-input" type="text" target="#autocompleteU" autofocus autocomplete="off">
+
+<div class="datalist" id="autocompleteU">
+    <div class="datalist-option">Vini</div>
+    <div class="datalist-option">Antonio</div>
+    <div class="datalist-option">Italo</div>
+    <div class="datalist-option">Isabelle</div>
+    <div class="datalist-option">Amanda</div>
+    <div class="datalist-option">Paulo</div>
+    <div class="datalist-option">Paula</div>
+    <div class="datalist-option">Paulinha</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        autocompletev.adicionaEventosDataList('#pesquisaUsuario');
+    });
+</script>
