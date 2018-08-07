@@ -28,3 +28,16 @@ $(document).ready(function () {
 	autocompletev.adicionaEventosDataList('#inputExample');
 });
 ```
+
+### Input
+The input need `class="datalist-input"`, attribute `target` that referencies the DIV datalist and also `autocomplete="off"`.
+
+### Datalist
+The datalist need of a id for the input text can use. For options use `div.datalist-option`
+
+### Method javascript
+The method must be called after creating the input text and the datalist.
+
+```javascript
+autocompletev.adicionaEventosDataList(idElement);
+```
