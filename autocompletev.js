@@ -32,17 +32,24 @@ Autocompletev.prototype.adicionaEventosDataList = function(selector) {
 
 	[].forEach.call(options, function (opt) {
 		opt.addEventListener('click', function (e) {
-			elemento.value = opt.innerHTML;
+			var valorAnterior = elemento.value;
+
+			elemento.value = opt.getAttribute('value');
 			clicouOp = false;
 
 			if (deuBlurInput) {
 				escondeDatalist(elemento.getAttribute('target'));
 				deuBlurInput = false;
 			}
+
+			if (valorAnterior !== elemento.value) {
+				elemento.dispatchEvent(new Event('change'));
+			}
 		});
 	});
 
 	function mostraDatalist(elTarget) {
+		filtrarAutoComplete(elemento.value, elTarget);
 		document.querySelector(elTarget).style.display = 'block';
 	}
 
@@ -54,7 +61,7 @@ Autocompletev.prototype.adicionaEventosDataList = function(selector) {
 		var options = document.querySelectorAll(elTarget + ' div');
 
 		[].forEach.call(options, function (opt) {
-			if (opt.innerHTML.indexOf(valor) == -1) {
+			if (opt.innerText.indexOf(valor) == -1) {
 				opt.style.display = 'none';
 			} else {
 				opt.style.display = '';
