@@ -6,23 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Autocompletev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="autocompletev.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="jquery.min.js"></script>
     <script src="autocompletev.js"></script>
 </head>
 <body>
-    <input id="pesquisaUsuario" class="form-control datalist-input" type="text" target="#autocompleteU" autofocus autocomplete="off">
-
-    <div class="datalist" id="autocompleteU">
-        <div class="datalist-option" value="Vini">Vini</div>
-        <div class="datalist-option" value="Antonio">Antonio</div>
-        <div class="datalist-option" value="Italo">Italo</div>
-        <div class="datalist-option" value="Isabelle">Isabelle</div>
-        <div class="datalist-option" value="Amanda">Amanda</div>
-        <div class="datalist-option" value="Paulo">Paulo</div>
-        <div class="datalist-option" value="Paula">Paula</div>
-        <div class="datalist-option" value="Paulinha">Paulinha</div>
+    <div class="box-login">
+        <input id="pesquisaUsuario" class="form-control datalist-input" type="text" target="#autocompleteU" autofocus autocomplete="off">
+    
+        <div class="datalist" id="autocompleteU">
+            <div class="datalist-option" value="Vini">Vini</div>
+            <div class="datalist-option" value="Antonio">Antonio</div>
+            <div class="datalist-option" value="Italo">Italo</div>
+            <div class="datalist-option" value="Isabelle">Isabelle</div>
+            <div class="datalist-option" value="Amanda">Amanda</div>
+            <div class="datalist-option" value="Paulo">Paulo</div>
+            <div class="datalist-option" value="Paula">Paula</div>
+            <div class="datalist-option" value="Paulinha">Paulinha</div>
+        </div>
     </div>
 </body>
 </html>
@@ -30,5 +32,17 @@
 <script>
     $(document).ready(function () {
         autocompletev.adicionaEventosDataList('#pesquisaUsuario');
+
+        $('.datalist-input').on('focus', function() {
+            $(this).css({
+                'border-bottom-left-radius': '0px',
+                'border-bottom-right-radius': '0px'
+            })
+        }).on('blur', function() {
+            $(this).css({
+                'border-bottom-left-radius': '11px',
+                'border-bottom-right-radius': '11px'
+            });
+        });
     });
 </script>

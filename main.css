@@ -1,5 +1,44 @@
+*{
+	box-sizing: border-box;
+}
+::-webkit-scrollbar-thumb{
+	background-color: rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar{
+	width: 8px;
+	height: 6px;
+}
+body{
+	background-color: #98D791;
+}
+input{
+	background-color: #DDDEE0;
+	border: none;
+	border-radius: 11px;
+	height: 40px;
+}
+input:focus{
+	outline: none;
+}
 .datalist{
 	/* margin-top: -16px; */
 	border: 1px solid #9c27b0;
 	border-top: 0px solid transparent;
+}
+.box-login{
+	width: 200px;
+	background-color: #FFFFFF;
+	padding: 4px;
+	height: 200px;
+	border-radius: 11px;
+}
+#pesquisaUsuario{
+	width: 100%;
+}
+.datalist{
+	border: none;
+	width: 100%;
+	background-color: #DDDEE0;
+	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 11px;
 }
